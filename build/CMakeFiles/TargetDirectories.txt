@@ -1,0 +1,3 @@
+/home/spectre/Téléchargements/Jeu de la vie Groupe D/build/CMakeFiles/Jeu_de_la_vie.dir
+/home/spectre/Téléchargements/Jeu de la vie Groupe D/build/CMakeFiles/edit_cache.dir
+/home/spectre/Téléchargements/Jeu de la vie Groupe D/build/CMakeFiles/rebuild_cache.dir
