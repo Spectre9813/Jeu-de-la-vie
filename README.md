@@ -93,18 +93,11 @@ sudo apt install libsfml-dev cmake build-essential
 ### Compilation
 
 ```bash
-cmake .
-make
-```
-
- 
- <!-- ```bash
 cd "Jeu de la vie Groupe D"
 mkdir build && cd build
 cmake ..
 make
-``` 
--->
+```
  
 ---
  
