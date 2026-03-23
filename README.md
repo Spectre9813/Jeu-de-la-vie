@@ -1,4 +1,5 @@
 # Jeu-de-la-vie
+Rattrapage du jeu de la vie, fait avec Yanis
 
 <div align="center">
  
@@ -69,32 +70,56 @@ La première ligne contient les dimensions de la grille (`lignes colonnes`), sui
 ---
  
 ## Installation
+
+### Clonage du repértoire
+
+```bash
+git pull "https://github.com/Spectre9813/Jeu-de-la-vie.git"
+cd Jeu-de-la-vie
+```
  
 ### Prérequis
  
+ #### Arch Linux/ CachyOS
 ```bash
-sudo pacman -S sfml cmake base-devel   # CachyOS / Arch
-# ou
-sudo apt install libsfml-dev cmake build-essential  # Ubuntu / Debian
+sudo pacman -S sfml cmake base-devel 
+```
+#### Ubuntu / Debian
+
+```bash
+sudo apt install libsfml-dev cmake build-essential 
 ```
  
 ### Compilation
- 
+
 ```bash
+cmake .
+make
+```
+
+ 
+ <!-- ```bash
 cd "Jeu de la vie Groupe D"
 mkdir build && cd build
 cmake ..
 make
-```
+``` 
+-->
  
 ---
  
 ## Utilisation
+
+## Prérequis
+- un fichier `.txt` d'entrée dans le même dossier que l'exécutable `build/`
+
+## Exécution
  
 ```bash
 ./Jeu_de_la_vie <chemin_fichier> <nb_iterations>
 ```
- 
+ > le chemin est forcément un fichier `.txt`, et `<chemin_fichier> est écrit sans l'extension `.txt`
+
 Exemples :
  
 ```bash
@@ -102,7 +127,6 @@ Exemples :
 ./Jeu_de_la_vie matrice 0         # infini (jusqu'à stabilité ou fermeture)
 ```
  
-> `matrice.txt` doit se trouver dans le même dossier que l'exécutable (`build/`).
  
 ### Modes d'affichage
  
