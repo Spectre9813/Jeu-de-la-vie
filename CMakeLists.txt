@@ -18,6 +18,7 @@ add_executable(Jeu_de_la_vie
         IRule.h
         RuleConway.h
         Rules.h
-        Config.h)
+        Config.h
+        Tests.h)
 
 target_link_libraries(Jeu_de_la_vie SFML::Graphics SFML::Window SFML::System)
