@@ -1,22 +1,48 @@
+#include "Tests.h"
 #include "Game.h"
 #include "Config.h"
-#include "Tests.h"
 #include <iostream>
 #include <string>
 #include <ctime>
 using namespace std;
 
+void printUsage(const string& prog) {
+    cerr << "Usage:\n"
+         << "  " << prog << " --test\n"
+         << "  " << prog << " <fichier> <iterations> --ui\n"
+         << "  " << prog << " <fichier> <iterations> --console\n";
+}
+
 int main(int argc, char* argv[]) {
-    // Mode test : ./Jeu_de_la_vie --test
     if (argc > 1 && string(argv[1]) == "--test") {
         Tests::runAll();
         return 0;
     }
 
-    string filePath = (argc > 1) ? argv[1] : "matrice";
-    int    nbIter   = (argc > 2) ? stoi(argv[2]) : 1000;
+    if (argc < 4) {
+        printUsage(argv[0]);
+        return 1;
+    }
+
+    string filePath = argv[1];
+    int    nbIter   = stoi(argv[2]);
+    string mode     = argv[3];
+
+    // UI et CONSOLE définis AVANT la construction de Game
+    if (mode == "--ui") {
+        UI      = true;
+        CONSOLE = false;
+    } else if (mode == "--console") {
+        UI      = false;
+        CONSOLE = true;
+    } else {
+        cerr << "Mode invalide : " << mode << "\n";
+        printUsage(argv[0]);
+        return 1;
+    }
 
     try {
+        // Game construit ICI, après que UI/CONSOLE soient définis
         Game game(filePath, nbIter);
 
         bool stable = false;
